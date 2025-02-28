@@ -28,10 +28,10 @@ public class MakingTheModelThinkTests extends BaseTestClass {
             Perform the following actions:
             1 - Summarize the following text delimited by triple
             backticks with 1 sentence.
-            2 - Translate the summary into Polish.
-            3 - List each name in the Polish summary.
+            2 - Translate the summary into German.
+            3 - List each name in the German summary.
             4 - Output a json object that contains the following
-            keys: polish_summary, num_names.
+            keys: german_summary, num_names.
             Separate your answers with line breaks.
             Text:
             ```{text}```
@@ -103,11 +103,11 @@ public class MakingTheModelThinkTests extends BaseTestClass {
             Question:
             ```
             I'm building a solar power installation and I need help working out the financials.
-            - Land costs $100 / square foot
-            - I can buy solar panels for $250 / square foot
-            - I negotiated a contract for maintenance that will cost me a flat $100k per year, and an additional $10 / square foot
+            - Land costs $100 / square meter
+            - I can buy solar panels for $250 / square meter
+            - I negotiated a contract for maintenance that will cost me a flat $100k per year, and an additional $10 / square meter
             
-            What is the total cost for the first year of operations as a function of the number of square feet.
+            What is the total cost for the first year of operations as a function of the number of square meters.
             ```
             
             Student's solution:

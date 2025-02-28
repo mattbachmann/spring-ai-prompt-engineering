@@ -42,7 +42,7 @@ public class ZeroAndFewShotTests extends BaseTestClass {
         for (int i = 0; i < 3; i++) {
             // java UUID randomUUID is an API cache buster
             PromptTemplate promptTemplate = new PromptTemplate(prompt,
-                    Map.of("review", UUID.randomUUID() + "\n" + review));
+                    Map.of("review", UUID.randomUUID() + "\n" + review)); // random UUID for Cache-busting, otherwise would get the same answer every time
 
             ChatResponse response = chatModel.call(promptTemplate.create());
 
@@ -55,8 +55,8 @@ public class ZeroAndFewShotTests extends BaseTestClass {
     void zeroShotPromptTestWithModelOptions() {
 
         OpenAiChatOptions openAiChatOptions = new OpenAiChatOptions.Builder(openAiChatProperties.getOptions())
-                .withTemperature(0.1) //default is 0.7
-                .withModel("gpt-4-turbo-preview")
+                .withTemperature(0.1) // default is 0.7 - lower temperature means less fuzziness - max is 1.8
+                .withModel("gpt-4-turbo-preview") // TODO: Check openai.Model.list()
                 .build();
 
         // java for loop 3 times
