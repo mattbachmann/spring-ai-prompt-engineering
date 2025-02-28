@@ -23,14 +23,14 @@ public class UsingSystemMessagesTests extends BaseTestClass {
                 You answer questions about cities in descriptive and welcoming paragraphs.
                 You hope the user will visit and enjoy the city.
                 """;
-        SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(systemPrompt);
+        SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(systemPrompt); // System instructions
 
         Message systemMessage = systemPromptTemplate.createMessage();
 
         PromptTemplate promptTemplate = new PromptTemplate("Tell me about New Orleans.");
         Message userMessage2 = promptTemplate.createMessage();
 
-        List<Message> messages = List.of(systemMessage, userMessage2);
+        List<Message> messages = List.of(systemMessage, userMessage2); // Chain system and user messages
 
         Prompt prompt = new Prompt(messages);
 
